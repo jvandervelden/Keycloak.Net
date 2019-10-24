@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Keycloak.Net.Models.ProtocolMappers;
 using Newtonsoft.Json;
 
 namespace Keycloak.Net.Models.Clients
@@ -19,6 +20,8 @@ namespace Keycloak.Net.Models.Clients
         public bool? Enabled { get; set; }
         [JsonProperty("clientAuthenticatorType")]
         public string ClientAuthenticatorType { get; set; }
+        [JsonProperty("secret")]
+        public string Secret { get; set; }
         [JsonProperty("redirectUris")]
         public IEnumerable<string> RedirectUris { get; set; }
         [JsonProperty("webOrigins")]
@@ -52,7 +55,7 @@ namespace Keycloak.Net.Models.Clients
         [JsonProperty("nodeReRegistrationTimeout")]
         public int? NodeReregistrationTimeout { get; set; }
         [JsonProperty("protocolMappers")]
-        public IEnumerable<ClientProtocolMapper> ProtocolMappers { get; set; }
+        public IEnumerable<ProtocolMapper> ProtocolMappers { get; set; }
         [JsonProperty("defaultClientScopes")]
         public IEnumerable<string> DefaultClientScopes { get; set; }
         [JsonProperty("optionalClientScopes")]
